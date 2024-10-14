@@ -20,3 +20,6 @@ img{
     background-color: var(--base);
     padding: var(--spacing);
 }
+#head span{
+    color: var(--base);
+}
