@@ -7,9 +7,9 @@ function setTime() {
 
   let seconds = (now.getSeconds() / 60) * 360 + 90;
   let minutes =
-    (now.getMinutes() / 60) * 360 + (now.getSeconds() / 60) * 6 + 90;
+    (now.getMinutes() / 60) * 360  + 90;
   let hour =
-    ((now.getHours() % 12) / 12) * 360 + (now.getMinutes() / 60) * 30 + 90;
+    (now.getHours() / 12) * 360  + 90;
 
   if (now.getSeconds() === 0) {
     secondHand.style.transition =
