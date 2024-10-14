@@ -1,0 +1,22 @@
+:root{
+    --base:#582948;
+    --spacing:10px;
+    --blur:1px;
+
+}
+html{
+    background-color: rgba(9, 87, 135, 0.808);
+}
+#controls{
+    background-color: rgba(201, 225, 241, 0.808);
+    border-radius: 9px;
+}
+#head{
+    font-size: xx-large;
+}
+img{
+    width: 60%;
+    filter: blur(var(--blur));
+    background-color: var(--base);
+    padding: var(--spacing);
+}

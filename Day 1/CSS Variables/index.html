@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="head">
+      <p>Update CSS Variables with <span>JS</span></p>
+    </div>
+    <div id="controls">
+      <label for="spacing"></label>
+      <input
+        type="range"
+        name="spacing"
+        min="10"
+        max="100"
+        value="10"
+        data-sizing="px"
+        class="range"
+      />
+
+      <label for="blur"></label>
+      <input type="range" class="range" name="blur" min="0" max="25" data-sizing="px" value="0"/>
+
+      <label for="base"></label>
+      <input type="color" name="base" value="#582948" />
+    </div>
+    <img src="./src/wallpaperflare.com_wallpaper.jpg" alt="image">
+    <script src="script.js"></script>
+  </body>
+</html>
