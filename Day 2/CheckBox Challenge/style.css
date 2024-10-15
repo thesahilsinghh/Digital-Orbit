@@ -1,0 +1,40 @@
+body {
+  background-color: rgb(254, 191, 2);
+  display: flex;
+  justify-content: center;
+}
+
+.input-boxes {
+  margin-top: 9rem;
+  min-height: 16rem;
+  display: flex;
+  flex-direction: column;
+  width: 15rem;
+  box-shadow: 4.0px 8.0px 8.0px hsl(0deg 0% 0% / 0.38);;
+}
+
+.input-boxes > * {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* justify-content: space-between; */
+    background-color: rgb(235, 227, 227);
+  flex: 1;
+  width: 100%;
+  border-top: 1px solid black;
+}
+.input-boxes>div:first-child  {
+    border-top:10px !important; 
+}
+.check-input{
+height: 80%;
+margin: 12px;
+}
+.check-info{
+    border-left: 1px solid grey;
+    margin-left: 5px;
+    padding-left: 12px;
+    height: 80%;
+    display: flex;
+    align-items: center;
+}
