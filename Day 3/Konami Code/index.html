@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      type="text/javascript"
+      src="http://www.cornify.com/js/cornify.js"
+    ></script>
+  </head>
+  <body>
+    <script>
+      const secretCode = "hackman";
+      let secretArray = [];
+      window.addEventListener("keyup", (e) => {
+        console.log(e.key);
+        secretArray.push(e.key);
+
+        if (secretArray.length == secretCode.length) {
+          if (secretArray.join("") == secretCode) {
+            cornify_add();
+            secretArray = [];
+          }
+          secretArray.splice(0, 1);
+        }
+      });
+    </script>
+  </body>
+</html>
