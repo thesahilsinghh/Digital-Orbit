@@ -21,7 +21,7 @@ function populatedContent(element, data) {
   element.innerHTML = data
     .slice(0, 15)
     .map((item) => {
-      return`<a href="" class="template">
+      return `<a href="" class="template">
       <img class="template-image" src="./src/new-outlet/a47b5c52af2e6bfc38c9465bea6b6d1e.jfif" alt="image">
       
       <div class="template-description">
@@ -40,3 +40,33 @@ function populatedContent(element, data) {
     })
     .join("");
 }
+
+//-------------------------------------------------------------------------
+
+const searchBar = document.querySelector("#search-input");
+function findMatch(word) {
+  let expression = new RegExp(word, "gi");
+  return saleArrayData.filter(
+    (x) => x.name.match(expression) || x.description.match(expression)
+  );
+}
+function feedMatch() {
+  let word = inputBar.value;
+  let template = document.querySelector(".search-output");
+  let output = findMatch(word);
+  output = output
+    .map((x) => {
+      let exp = new RegExp(word, "gi");
+      let cityName = x.city.replace(exp, `<span class="h1">${word}</span>`);
+      let stateName = x.state.replace(exp, `<span class="h1">${word}</span>`);
+
+      return `<div class="template">
+    <p class="city"> ${cityName}, ${stateName}</p>
+    <p class="popualtion"> ${x.population}</p>
+    </div>`;
+    })
+    .join(" ");
+
+  template.innerHTML = output;
+}
+searchBar.addEventListener("keyup", feedMatch);
