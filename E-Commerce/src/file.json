@@ -1,0 +1,356 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "Classic White T-Shirt",
+            "description": "A timeless white t-shirt for all casual occasions.",
+            "brand": "Urban Outfitters",
+            "price": 19.99,
+            "quantity": 100,
+            "rating": 4.5,
+            "featured": true,
+            "category": "Tops",
+            "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+            ],
+            "image": "images/classic-white-tshirt.jpg"
+        },
+        {
+            "id": 2,
+            "name": "Blue Denim Jacket",
+            "description": "A rugged denim jacket that never goes out of style.",
+            "brand": "Levi's",
+            "price": 59.99,
+            "quantity": 50,
+            "rating": 4.7,
+            "featured": true,
+            "category": "Jackets",
+            "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+            ],
+            "image": "images/blue-denim-jacket.jpg"
+        },
+        {
+            "id": 3,
+            "name": "Floral Summer Dress",
+            "description": "A light and breezy floral dress, perfect for summer days.",
+            "brand": "Zara",
+            "price": 39.99,
+            "quantity": 30,
+            "rating": 4.3,
+            "featured": false,
+            "category": "Dresses",
+            "sizes": [
+                "XS",
+                "S",
+                "M",
+                "L"
+            ],
+            "image": "images/floral-summer-dress.jpg"
+        },
+        {
+            "id": 4,
+            "name": "Black Skinny Jeans",
+            "description": "Super skinny, super stretch, and super comfortable.",
+            "brand": "H&M",
+            "price": 29.99,
+            "quantity": 75,
+            "rating": 4.2,
+            "featured": false,
+            "category": "Jeans",
+            "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+            ],
+            "image": "images/black-skinny-jeans.jpg"
+        },
+        {
+            "id": 5,
+            "name": "Red Plaid Shirt",
+            "description": "A casual plaid shirt that pairs perfectly with jeans.",
+            "brand": "GAP",
+            "price": 24.99,
+            "quantity": 60,
+            "rating": 4.4,
+            "featured": true,
+            "category": "Shirts",
+            "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+            ],
+            "image": "images/red-plaid-shirt.jpg"
+        },
+        {
+            "id": 6,
+            "name": "Grey Hooded Sweatshirt",
+            "description": "A comfy hoodie for everyday wear.",
+            "brand": "Nike",
+            "price": 49.99,
+            "quantity": 120,
+            "rating": 4.8,
+            "featured": true,
+            "category": "Sweatshirts",
+            "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL",
+                "XXL"
+            ],
+            "image": "images/grey-hooded-sweatshirt.jpg"
+        },
+        {
+            "id": 7,
+            "name": "White Sneakers",
+            "description": "Classic white sneakers that go with everything.",
+            "brand": "Adidas",
+            "price": 69.99,
+            "quantity": 80,
+            "rating": 4.9,
+            "featured": true,
+            "category": "Footwear",
+            "sizes": [
+                "7",
+                "8",
+                "9",
+                "10",
+                "11"
+            ],
+            "image": "images/white-sneakers.jpg"
+        },
+        {
+            "id": 8,
+            "name": "Black Leather Belt",
+            "description": "A stylish black leather belt with a sleek buckle.",
+            "brand": "Gucci",
+            "price": 89.99,
+            "quantity": 25,
+            "rating": 4.6,
+            "featured": false,
+            "category": "Accessories",
+            "sizes": [
+                "M",
+                "L",
+                "XL"
+            ],
+            "image": "images/black-leather-belt.jpg"
+        },
+        {
+            "id": 9,
+            "name": "Cotton Pajama Set",
+            "description": "Soft and breathable cotton pajama set for restful nights.",
+            "brand": "Calvin Klein",
+            "price": 34.99,
+            "quantity": 40,
+            "rating": 4.3,
+            "featured": false,
+            "category": "Loungewear",
+            "sizes": [
+                "S",
+                "M",
+                "L"
+            ],
+            "image": "images/cotton-pajama-set.jpg"
+        },
+        {
+            "id": 10,
+            "name": "Pink Beanie",
+            "description": "A cozy knit beanie for colder days.",
+            "brand": "Adidas",
+            "price": 14.99,
+            "quantity": 35,
+            "rating": 4.1,
+            "featured": false,
+            "category": "Accessories",
+            "sizes": [
+                "One Size"
+            ],
+            "image": "images/pink-beanie.jpg"
+        },
+        {
+            "id": 11,
+            "name": "Leather Boots",
+            "description": "Durable leather boots that are both stylish and practical.",
+            "brand": "Timberland",
+            "price": 129.99,
+            "quantity": 20,
+            "rating": 4.8,
+            "featured": true,
+            "category": "Footwear",
+            "sizes": [
+                "8",
+                "9",
+                "10",
+                "11"
+            ],
+            "image": "images/leather-boots.jpg"
+        },
+        {
+            "id": 12,
+            "name": "Athletic Shorts",
+            "description": "Lightweight athletic shorts for active days.",
+            "brand": "Under Armour",
+            "price": 24.99,
+            "quantity": 65,
+            "rating": 4.7,
+            "featured": false,
+            "category": "Sportswear",
+            "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+            ],
+            "image": "images/athletic-shorts.jpg"
+        },
+        {
+            "id": 13,
+            "name": "Striped Polo Shirt",
+            "description": "A casual striped polo shirt with a classic fit.",
+            "brand": "Ralph Lauren",
+            "price": 49.99,
+            "quantity": 50,
+            "rating": 4.4,
+            "featured": false,
+            "category": "Shirts",
+            "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+            ],
+            "image": "images/striped-polo-shirt.jpg"
+        },
+        {
+            "id": 14,
+            "name": "Wool Scarf",
+            "description": "A warm wool scarf to keep you cozy in winter.",
+            "brand": "Burberry",
+            "price": 59.99,
+            "quantity": 15,
+            "rating": 4.6,
+            "featured": false,
+            "category": "Accessories",
+            "sizes": [
+                "One Size"
+            ],
+            "image": "images/wool-scarf.jpg"
+        },
+        {
+            "id": 15,
+            "name": "Khaki Cargo Pants",
+            "description": "Utility cargo pants with a relaxed fit.",
+            "brand": "Dockers",
+            "price": 34.99,
+            "quantity": 55,
+            "rating": 4.5,
+            "featured": true,
+            "category": "Pants",
+            "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+            ],
+            "image": "images/khaki-cargo-pants.jpg"
+        },
+        {
+            "id": 16,
+            "name": "Graphic Tee",
+            "description": "A fun graphic tee with a unique design.",
+            "brand": "Supreme",
+            "price": 29.99,
+            "quantity": 60,
+            "rating": 4.3,
+            "featured": false,
+            "category": "Tops",
+            "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+            ],
+            "image": "images/graphic-tee.jpg"
+        },
+        {
+            "id": 17,
+            "name": "High-Waisted Jeans",
+            "description": "High-waisted jeans with a flattering fit.",
+            "brand": "Topshop",
+            "price": 44.99,
+            "quantity": 45,
+            "rating": 4.7,
+            "featured": true,
+            "category": "Jeans",
+            "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+            ],
+            "image": "images/high-waisted-jeans.jpg"
+        },
+        {
+            "id": 18,
+            "name": "Faux Fur Coat",
+            "description": "A chic faux fur coat for colder days.",
+            "brand": "Forever 21",
+            "price": 89.99,
+            "quantity": 25,
+            "rating": 4.5,
+            "featured": true,
+            "category": "Outerwear",
+            "sizes": [
+                "S",
+                "M",
+                "L"
+            ],
+            "image": "images/faux-fur-coat.jpg"
+        },
+        {
+            "id": 19,
+            "name": "Silk Blouse",
+            "description": "An elegant silk blouse for special occasions.",
+            "brand": "Chanel",
+            "price": 119.99,
+            "quantity": 15,
+            "rating": 4.9,
+            "featured": true,
+            "category": "Tops",
+            "sizes": [
+                "S",
+                "M",
+                "L"
+            ],
+            "image": "images/silk-blouse.jpg"
+        },
+        {
+            "id": 20,
+            "name": "Classic Trench Coat",
+            "description": "A timeless trench coat for a polished look.",
+            "brand": "Burberry",
+            "price": 249.99,
+            "quantity": 10,
+            "rating": 4.8,
+            "featured": true,
+            "category": "Outerwear",
+            "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+            ],
+            "image": "images/classic-trench-coat.jpg"
+        }
+    ]
+}
