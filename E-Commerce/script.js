@@ -51,22 +51,29 @@ function findMatch(word) {
   );
 }
 function feedMatch() {
-  let word = inputBar.value;
+  let word = searchBar.value;
+
   let template = document.querySelector(".search-output");
+
+  if (word === "") {
+    // Hide the template when search bar is empty
+    template.classList.add("hidden-content");
+    template.innerHTML = "";
+    return;
+  }
+
+  //toggle this if searchBar is no longer active
+  template.classList.remove("hidden-content");
   let output = findMatch(word);
   output = output
     .map((x) => {
-      let exp = new RegExp(word, "gi");
-      let cityName = x.city.replace(exp, `<span class="h1">${word}</span>`);
-      let stateName = x.state.replace(exp, `<span class="h1">${word}</span>`);
-
-      return `<div class="template">
-    <p class="city"> ${cityName}, ${stateName}</p>
-    <p class="popualtion"> ${x.population}</p>
-    </div>`;
+      return `<a class="search-bar-template">
+      <img  class="search-bar-template-img" src="" alt="">
+      <p class="city"> ${x.name}</p>
+    </a>`;
     })
     .join(" ");
-
-  template.innerHTML = output;
+  if (output.trim() == "") template.innerHTML = "No suggestion found...";
+  else template.innerHTML = output;
 }
 searchBar.addEventListener("keyup", feedMatch);
