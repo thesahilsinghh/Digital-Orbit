@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="icon" href="./src/logo.png" />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/7f966d5ce3.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-content">
+        <a href="index.html"><img id="logo" src="./src/logo.png" alt="" /></a>
+      </div>
+      <div class="nav-content to-hamburger non-active">
+        <a href="#">Home</a><a href="">Shop</a><a href="contact.html">Contact</a
+        ><a href="">New & Featured</a><a href="">Sale</a>
+      </div>
+      <div class="nav-content mobile-hidden">
+        <div class="search-div">
+          <label for="search" id="magnifying-glass"
+            ><i class="fa-solid fa-magnifying-glass"></i
+          ></label>
+          <input
+            type="text"
+            name="search"
+            placeholder="Search"
+            id="search-input"
+          />
+        </div>
+        <a href=""><i class="fa-regular fa-user"></i></a>
+        <a href=""><i class="fa-regular fa-heart"></i></a
+        ><a href=""><i class="fa-solid fa-bag-shopping"></i></a>
+      </div>
+      <div class="nav-for-mobile hidden-content nav-content">
+        <button class="show-search-bar-button">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+        <input
+          type="text"
+          name="search"
+          placeholder="Search"
+          class="search-input hidden-content"
+          id="search-input-mobile"
+        />
+        <a href=""><i class="fa-regular fa-user"></i></a>
+        <a href=""><i class="fa-solid fa-bag-shopping"></i></a>
+        <button class="toggle-menu-button">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+      <div class="search-output hidden-content"></div>
+    </nav>
+    <main>
+      <div class="product-details"></div>
+    </main>
+    <footer>
+      <div class="footer-div">
+        <h3>Resources</h3>
+        <a href="#">Find A Store</a>
+        <a href="#">Become A Member</a>
+        <a href="#">Send Us Feedback</a>
+      </div>
+      <div class="footer-div">
+        <h3>Help</h3>
+        <a href="#">Get Help</a>
+        <a href="#">Order Status</a>
+        <a href="#">Delivery</a>
+        <a href="#">Returns</a>
+        <a href="#">Payment Options</a>
+        <a href="#">Contact Us</a>
+      </div>
+      <div class="footer-div">
+        <h3>Company</h3>
+        <a href="#">About Us</a>
+        <a href="#">News</a>
+        <a href="#">Careers</a>
+        <a href="#">Investors</a>
+        <a href="#">Sustainability</a>
+      </div>
+      <div class="footer-div">
+        <h3>Follow Us</h3>
+        <div class="social-links">
+          <a target="_blank" href="https://www.facebook.com/"
+            ><i class="fa-brands fa-facebook social-logo"></i></a
+          ><a target="_blank" href="https://www.instagram.com/"
+            ><i class="fa-brands fa-instagram social-logo"></i></a
+          ><a href="https://www.linkedin.com/" target="_blank"
+            ><i class="fa-brands fa-linkedin social-logo"></i
+          ></a>
+        </div>
+        <a href="#"><img src="./src/logo.png" id="footer-logo" alt="" /></a>
+      </div>
+    </footer>
+    <script src="./js/about.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

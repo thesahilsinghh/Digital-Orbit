@@ -13,14 +13,14 @@
   </head>
   <body>
     <nav>
-      <div class="nav-content to-hamburger">
+      <div class="nav-content">
         <a href="#"><img id="logo" src="./src/logo.png" alt="" /></a>
       </div>
-      <div class="nav-content to-hamburger">
-        <a href="#">Home</a><a href="">Shop</a><a href="">Contact</a
-        ><a href="">New & Featured</a><a href="">Sale</a>
+      <div class="nav-content to-hamburger non-active">
+        <a href="#">Home</a><a href="">Shop</a><a href="contact.html">Contact</a
+        ><a href="contact.html">New & Featured</a><a href="">Sale</a>
       </div>
-      <div class="nav-content to-hamburger">
+      <div class="nav-content mobile-hidden">
         <div class="search-div">
           <label for="search" id="magnifying-glass"
             ><i class="fa-solid fa-magnifying-glass"></i
@@ -32,13 +32,18 @@
             id="search-input"
           />
         </div>
-        <a href=""><i class="fa-regular fa-user"></i></a
-        ><a href=""><i class="fa-regular fa-heart"></i></a
+        <a href=""><i class="fa-regular fa-user"></i></a>
+        <a href=""><i class="fa-regular fa-heart"></i></a
         ><a href=""><i class="fa-solid fa-bag-shopping"></i></a>
       </div>
-      <div class="search-output hidden-content">
-
+      <div class="nav-for-mobile hidden-content nav-content">
+        <button class="show-search-bar-button"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <input type="text" name="search" placeholder="Search" class="search-input hidden-content" id="search-input-mobile"/>
+        <a href=""><i class="fa-regular fa-user"></i></a>
+        <a href=""><i class="fa-solid fa-bag-shopping"></i></a>
+        <button class="toggle-menu-button"><i class="fa-solid fa-bars"></i></button>
       </div>
+      <div class="search-output hidden-content"></div>
     </nav>
 
     <main>
@@ -172,8 +177,6 @@
       </div>
     </footer>
 
-
-    
-    <script src="script.js"></script>
+    <script src="./js/script.js"></script>
   </body>
 </html>
