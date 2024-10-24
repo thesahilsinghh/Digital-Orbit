@@ -155,10 +155,10 @@ function addToCart(e) {
     return;
   }
   const productId = e.currentTarget.id;
-
-  if (cart.includes(productId)) {
+  let findItem = cart.find((item) => item.id == productId);
+  if (findItem) {
     //remove from cart
-    cart = cart.filter((id) => id !== productId);
+    cart = cart.filter((x) => x.id !== productId);
     console.log("Item removed:", productId);
     e.currentTarget.textContent = "Add To Bag";
   } else {

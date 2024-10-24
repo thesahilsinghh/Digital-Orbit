@@ -23,6 +23,9 @@ fetch("./src/file.json")
 function populatedBag() {
   itemSection.innerHTML = allitemsDetail
     .map((element) => {
+      let itemValue = cartItems.find((item) => item.id == element.id);
+      let { selectedSize, selectedColor, selectedQuantity } = itemValue;
+
       return `<div class="cart-tile">
                         <div>
                             <img
@@ -32,19 +35,35 @@ function populatedBag() {
                             />
                         </div>
                         <div class="cart-tile-details">
-                            <a class="template-details" href="about.html?id=${element.id}" target="_blank">
+                            <a class="template-details" href="about.html?id=${
+                              element.id
+                            }" target="_blank">
                                 <p class="template-description-head">Revolve</p>
                                 <p class="template-name">${element.name}</p>
-                                <p class="template-price">Rs. ${element.price}</p>
+                                <p class="template-price">Rs. ${
+                                  element.price
+                                }</p>
                             </a>
                             <div class="cart-tile-options">
-                                <div class="cart-item-color cart-item-description"></div>
-                                <div class="cart-item-size cart-item-description">L</div>
+                                <div class="cart-item-color cart-item-description" style="background-color:${
+                                  selectedColor ? selectedColor : "green"
+                                } "></div>
+                                <div class="cart-item-size cart-item-description">${
+                                  selectedSize ? selectedSize : "L"
+                                }</div>
                             </div>
                             <div class="update-counter">
-                                <button class="change-count" id="${element.id}" data-skip="-1"><i class="fa-solid fa-trash-can"></i></button>
-                                <input class="item-count" id="${element.id}" type="text" value="1" min="1" />
-                                <button class="change-count" id="${element.id}"  data-skip="1">+</button>
+                                <button class="change-count" id="${
+                                  element.id
+                                }" data-skip="-1"><i class="fa-solid fa-trash-can"></i></button>
+                                <input class="item-count" id="${
+                                  element.id
+                                }" type="text" value="${
+        selectedQuantity ? selectedQuantity : 1
+      }" min="1" />
+                                <button class="change-count" id="${
+                                  element.id
+                                }"  data-skip="1">+</button>
                             </div>
                         </div>
                         </div>
