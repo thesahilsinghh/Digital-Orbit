@@ -1,0 +1,29 @@
+<div class="cart-tile">
+  <div>
+    <img
+      class="cart-tile-image"
+      src="./src/new-outlet/a47b5c52af2e6bfc38c9465bea6b6d1e.jfif"
+      alt=""
+    />
+  </div>
+  <div class="cart-tile-details">
+    <a
+      class="template-details"
+      href="about.html?id=${element.id}"
+      target="_blank"
+    >
+      <p class="template-description-head">Revolve</p>
+      <p class="template-name">${element.name}</p>
+      <p class="template-price">Rs. ${element.price}</p>
+    </a>
+    <div class="cart-tile-options">
+      <div class="cart-item-color cart-item-description"></div>
+      <div class="cart-item-size cart-item-description">L</div>
+    </div>
+    <div>
+      <button class="decrement-item-count" id="dec-${element.id}"></button>
+      <input type="text" value="1" min="1" />
+      <button class="increment-item-count" id="inc-${element.id}"></button>
+    </div>
+  </div>
+</div>

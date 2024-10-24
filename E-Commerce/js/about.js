@@ -1,7 +1,7 @@
 const productDetailsTemplate = document.querySelector(".product-details");
 const productId = getQueryParam("id");
 const fileLocation = "./src/file.json";
-
+let cart = JSON.parse(localStorage.getItem("users_cart")) || [];
 if (productId) {
   fetch(fileLocation)
     .then((blob) => blob.json())
@@ -9,6 +9,12 @@ if (productId) {
     .then((data) => {
       let productDetails = data.find((product) => product.id == productId);
       if (productDetails) {
+        let localStorageCart =
+          JSON.parse(localStorage.getItem("users_cart")) || [];
+
+        let isInBag = localStorageCart.includes("" + productDetails.id);
+        console.log(isInBag);
+        let addCartButtonTextContent = isInBag ? "Item Added" : "Add To Bag";
         let sizeOptions = productDetails.sizes
           .map((element, index) => {
             return `
@@ -55,14 +61,19 @@ if (productId) {
                 </div>
             </div>
 
-            <div>
+            <div class="about-item-options-sizes">
                 <p>Sizes</p>
                 <div>
                 ${sizeOptions}
                 </div>
             </div>
+            <div class="update-counter">
+                                <button class="change-count"  data-skip="-1">-</button>
+                                <input class="item-count" type="text" value="1" min="1" />
+                                <button class="change-count" data-skip="1">+</button>
+                            </div>
 
-            <button class="add-to-cart-button">Add to Bag</button>
+            <button id="${productDetails.id}" class="add-to-cart-button">${addCartButtonTextContent}</button>
             </form>
 
           <div class="product-details-dropdown">
@@ -85,24 +96,86 @@ if (productId) {
         </div>
 
         `;
-        const detailedViewButtons = document.querySelectorAll('.drop-down-button');
-        detailedViewButtons.forEach(button => {
-          button.addEventListener('click', function () {
-            const content = this.parentElement.nextElementSibling;
-            content.classList.toggle('hidden-content'); 
-            this.classList.toggle('active');
-            
-          });
+
+        //event listners
+        document
+          .querySelectorAll(".change-count")
+          .forEach((x) => x.addEventListener("click", changeCount));
+
+        document
+          .querySelector(".add-to-cart-button")
+          .addEventListener("click", addToCart);
+
+        document.querySelectorAll(".drop-down-button").forEach((button) => {
+          button.addEventListener("click", detailedView);
         });
-        
       } else {
-        console.log("ss");
+        //if url doesn't consist of product id
         productDetailsTemplate.innerHTML = `<img  class="error-image" src="./src/images/empty cart/404-error-not-found-page-lost.png">`;
       }
     });
 }
-
+//functions------------------------------------------------------------------------------------------------------------------------------------------
 function getQueryParam(param) {
   const urlParams = new URLSearchParams(window.location.search);
   return urlParams.get(param);
+}
+
+function changeCount(e) {
+  console.log(this);
+  e.stopPropagation();
+  e.preventDefault();
+  let itemId = this.id;
+  const inputBox = document.querySelector(`.item-count`);
+
+  if (inputBox) {
+    let currentCount = parseInt(inputBox.value);
+    let change = parseInt(this.getAttribute("data-skip"));
+    let newCount = currentCount + change;
+
+    if (newCount >= 1) {
+      inputBox.value = newCount;
+    }
+  }
+}
+function addToCart(e) {
+  let cart = JSON.parse(localStorage.getItem("users_cart")) || [];
+  e.preventDefault();
+  e.stopPropagation();
+
+  const selectedSize = document.querySelector(
+    'input[name="size"]:checked'
+  )?.value;
+  const selectedColor = document.querySelector(
+    'input[name="colors"]:checked'
+  )?.value;
+  const selectedQuantity = document.querySelector(`.item-count`)?.value;
+  if (!selectedSize || !selectedColor) {
+    alert("Please select a size and color.");
+    return;
+  }
+  const productId = e.currentTarget.id;
+
+  if (cart.includes(productId)) {
+    //remove from cart
+    cart = cart.filter((id) => id !== productId);
+    console.log("Item removed:", productId);
+    e.currentTarget.textContent = "Add To Bag";
+  } else {
+    // Add the item to the cart
+    cart.push({ id: productId, selectedSize, selectedColor, selectedQuantity });
+    console.log("Item added:", productId);
+    e.currentTarget.textContent = "Item Added";
+  }
+
+  // Save cart back to localStorage
+
+  localStorage.setItem("users_cart", JSON.stringify(cart));
+  console.log("Updated cart:", cart);
+}
+
+function detailedView() {
+  const content = this.parentElement.nextElementSibling;
+  content.classList.toggle("hidden-content");
+  this.classList.toggle("active");
 }

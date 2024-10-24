@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>H&R store</title>
+    <title>Document</title>
     <link rel="icon" href="./src/logo.png" />
     <link rel="stylesheet" href="style.css" />
     <script
@@ -17,10 +17,9 @@
         <a href="index.html"><img id="logo" src="./src/logo.png" alt="" /></a>
       </div>
       <div class="nav-content to-hamburger non-active">
-        <a href="index.html">Home</a>
-        <a href="">Shop</a>
-        <a href="">New & Featured</a>
-        <a href="">Sale</a>
+        <a href="index.html">Home</a><a href="">Shop</a
+        ><a href="contact.html">Contact</a><a href="">New & Featured</a
+        ><a href="">Sale</a>
       </div>
       <div class="nav-content mobile-hidden">
         <div class="search-div">
@@ -36,7 +35,7 @@
         </div>
         <a href=""><i class="fa-regular fa-user"></i></a>
         <a href=""><i class="fa-regular fa-heart"></i></a
-        ><a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a>
+        ><a href="#"><i class="fa-solid fa-bag-shopping"></i></a>
       </div>
       <div class="nav-for-mobile hidden-content nav-content">
         <button class="show-search-bar-button">
@@ -57,86 +56,29 @@
       </div>
       <div class="search-output hidden-content"></div>
     </nav>
-
     <main>
-      <form id="contact-form" action="">
-        <div>
-          <p class="contact-form-heading">Contact</p>
-          <div class="form-input-section">
-            <input
-              class="contact-input"
-              type="text"
-              name="contact-email"
-              placeholder="Email"
-              required
-            />
-            <input
-              class="contact-input"
-              type="text"
-              name="contact-phone"
-              placeholder="Phone number"
-              required
-            />
+      <div class="Cart">
+        <h1 class="cart-heading">Bag</h1>
+        <div class="cart-section">
+          <div class="cart-items"></div>
+          <div class="cart-order-summary-section">
+            <h1>Order Summary</h1>
+              
+            <div>
+              <p>Subtotal</p>
+              <p class="cart-items-total"></p>
+            </div>
+            <div>
+              <p>Estimated Delivery & Handeling</p>
+              <p>Rs. 300</p>
+            </div>
+            <div class="total-section">
+              <p>Total</p>
+              <p class="cart-items-total-final"></p>
+            </div>
           </div>
         </div>
-        <div>
-          <p class="contact-form-heading">Information Details</p>
-          <div class="form-input-section" id="contact-form-name">
-            <input
-              class="contact-input"
-              type="text"
-              name="contact-name"
-              placeholder="Full Name"
-              required
-            />
-          </div>
-          <div class="form-input-section" id="contact-form-company">
-            <input
-              class="contact-input"
-              type="text"
-              name="contact-company"
-              placeholder="Company (optional)"
-            />
-          </div>
-          <div class="form-input-section">
-            <input
-              class="contact-input"
-              type="text"
-              name="contact-address"
-              placeholder="Address"
-              required
-            />
-          </div>
-          <div class="form-input-section">
-            <input
-              class="contact-input"
-              type="text"
-              name="contact-city"
-              placeholder="City"
-              required
-            />
-            <input
-              class="contact-input"
-              type="text"
-              name="contact-state"
-              placeholder="State"
-              required
-            />
-            <input
-              class="contact-input"
-              type="text"
-              name="contact-code"
-              placeholder="Pin Code"
-              required
-            />
-          </div>
-        </div>
-        <div class="save-info-section">
-          <input id="save-info" type="checkbox" name="save-info" />
-          <label for="save-info">Save this information for next time</label>
-        </div>
-        <button class="save-info-button">Save Information</button>
-      </form>
+      </div>
     </main>
     <footer>
       <div class="footer-div">
@@ -176,7 +118,7 @@
         <a href="#"><img src="./src/logo.png" id="footer-logo" alt="" /></a>
       </div>
     </footer>
-    <script src="js/script.js"></script>
-    <script src="./js/contact.js"></script>
+    <script src="./js/cart.js"></script>
+    <script src="./js/script.js"></script>
   </body>
 </html>
