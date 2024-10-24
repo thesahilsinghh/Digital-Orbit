@@ -46,7 +46,7 @@ function populatedBag() {
                             </a>
                             <div class="cart-tile-options">
                                 <div class="cart-item-color cart-item-description" style="background-color:${
-                                  selectedColor ? selectedColor : "green"
+                                  selectedColor ? selectedColor : "grey"
                                 } "></div>
                                 <div class="cart-item-size cart-item-description">${
                                   selectedSize ? selectedSize : "L"
@@ -77,7 +77,8 @@ function populatedBag() {
 }
 
 function changeCount(e) {
-  console.log(this);
+  e.preventDefault();
+  e.stopPropagation();
   let itemId = this.id;
   let inputBox = document.querySelector(`input[id="${itemId}"]`);
 
@@ -87,32 +88,30 @@ function changeCount(e) {
     let newCount = currentCount + change;
 
     if (newCount >= 1) {
-      let itemPrice = allitemsDetail.find((item) => item.id == itemId).price;
       inputBox.value = newCount;
-      let priceDifference = change * itemPrice;
-      totalAmount += priceDifference;
     } else {
-      cartItems = cartItems.filter((item) => item != itemId);
+      cartItems = cartItems.filter((item) => item.id != itemId);
       localStorage.setItem("users_cart", JSON.stringify(cartItems));
       allitemsDetail = allitemsDetail.filter((x) => {
-        return cartItems.includes("" + x.id);
+        return cartItems.find((item) => x.id == item.id);
       });
       populatedBag();
     }
     updateTotal();
   }
 }
-
 function updateTotal() {
   let total = allitemsDetail.reduce((prev, curr) => {
-    return (prev += curr.price);
+    let quantity = document.querySelector(`input[id="${curr.id}"]`)?.value || 1;
+
+    return prev + parseFloat(curr.price) * parseInt(quantity);
   }, 0);
+
   if (total == 0 && allitemsDetail.length == 0) {
     document.querySelector(".cart-section").innerHTML = `
-   <img src="./src/images/empty cart/empty-cart-10681467-8593283.webp" alt="" class="empty-cart-image">
-   `;
+      <img src="./src/images/empty cart/empty-cart-10681467-8593283.webp" alt="" class="empty-cart-image">
+    `;
   } else {
-    console.log(total);
     document.querySelector(".cart-items-total").innerHTML =
       total > 0 ? "Rs." + total : 0;
     document.querySelector(".cart-items-total-final").innerHTML =
